@@ -30,10 +30,10 @@ var duration = 0
 function recalculate(){
     let costLabel = document.getElementById("calculated-cost");
     if (modelName == 'XYZ'){
-        costLabel.innerHTML = parseInt(duration_text) * 100
+        costLabel.innerHTML = parseInt(duration) * 100
     }
     else{
-        costLabel.innerHTML = parseInt(duration_text) *213
+        costLabel.innerHTML = parseInt(duration) *213
     }
 }
 
@@ -53,9 +53,9 @@ function recalculate(){
    /** modelButton.addEventListener("click", changeModel);*/
 
 // INSERT YOUR CODE HERE
-var button = document.getElementById('model-button')
+var button = document.getElementById('model-button');
 function changeModel(){
-    let modellable = document.getElementById('model-text')
+    let modellable = document.getElementById('model-text');
     if(modelName == 'XYZ'){
         modelName = 'CPRG'
         modellable.innerHTML = 'model CPRG'
@@ -64,7 +64,7 @@ function changeModel(){
         modelName = 'XYZ'
         modellable.innerHTML = 'model XYZ'
     }
-    recalculate()
+    recalculate();
 }
 button.addEventListener("click", changeModel);
 
@@ -84,13 +84,12 @@ button.addEventListener("click", changeModel);
 */
 
 // INSERT YOUR CODE HERE
-var durationButton = document.getElementById('duration-button')
-var duration_text = document.getElementById('duration-text')
+var durationButton = document.getElementById('duration-button');
 function changeDuration(){
-    let duration_text = document.getElementById('duration-text')
-    duration = parseInt(window.prompt('Enter duration time'))
-    duration_text.innerHTML = duration
-    recalculate()
+    let duration_text = document.getElementById('duration-text');
+    duration = window.prompt('Enter duration time');
+    duration_text.innerHTML = duration;
+    recalculate();
 
 }
-durationButton.addEventListener("click",changeDuration)
+durationButton.addEventListener("click",changeDuration);
